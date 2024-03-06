@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">SurveyWithoutCompose</string>
+    <string name="post_method">POST Method</string>
+    <string name="get_method">GET Method</string>
+</resources>
