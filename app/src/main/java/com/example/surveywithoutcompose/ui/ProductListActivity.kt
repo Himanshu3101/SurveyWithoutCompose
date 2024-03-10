@@ -6,18 +6,17 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.example.surveywithoutcompose.R
-import com.example.surveywithoutcompose.data.ApiResponseData
 import com.example.surveywithoutcompose.data.ApiResultHandler
 import com.example.surveywithoutcompose.data.LoginData
 import com.example.surveywithoutcompose.data.UserRequest
 import com.example.surveywithoutcompose.databinding.ActivityProductListBinding
-import com.example.surveywithoutcompose.viewModels.MainviewModel
+import com.example.surveywithoutcompose.viewModels.Welcome_VM
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class ProductListActivity : AppCompatActivity() {
 
-    private val mainViewModel by viewModels<MainviewModel>()
+    private val mainViewModel by viewModels<Welcome_VM>()
     lateinit var activityProductListBinding: ActivityProductListBinding
     lateinit var productListAdapter: ProductListAdapter
 

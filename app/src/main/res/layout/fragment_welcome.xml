@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="welcomeBinding"
+            type="com.example.surveywithoutcompose.ui.fragment.WelcomeFragment" />
+    </data>
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.fragment.WelcomeFragment">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/linearLayoutCompat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                app:srcCompat="@drawable/logo" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textView1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/slogan"
+                android:textAlignment="center"
+                android:textSize="29sp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView"
+                app:layout_constraintTop_toBottomOf="@+id/imageView"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:text="@string/signdesc"
+                android:textAlignment="center"
+                android:textSize="19sp"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/filledTextField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="22dp"
+                android:focusable="auto"
+                android:hint="@string/email">
+
+                <!--this is the actual edit text which takes the input-->
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/email_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="53dp"
+                    android:textSize="15sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_post_method"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="24dp"
+                android:onClick="@{()->welcomeBinding.onClickButtom(true)}"
+                android:text="@string/post_method"
+                android:textSize="17sp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/or"
+                android:textAlignment="center"
+                android:textSize="19sp"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/guestBtn"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="24dp"
+                android:letterSpacing="0.1"
+                android:onClick="@{()->welcomeBinding.onClickButtom(false)}"
+                android:text="@string/guest"
+                app:cornerRadius="23dp"
+                app:strokeColor="@color/my_light_primary"
+                app:strokeWidth="1dp" />
+
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </FrameLayout>
+
+</layout>

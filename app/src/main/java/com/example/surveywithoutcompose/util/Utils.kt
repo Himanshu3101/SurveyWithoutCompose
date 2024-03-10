@@ -5,9 +5,11 @@ import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import com.example.surveywithoutcompose.R
+import java.util.regex.Pattern
 
 object Utils {
 
+    private const val EMAIL_VALIDATION_REGEX = "^(.+)@(.+)\$"
     fun hasInternetConnection(context: Context?): Boolean {
         try {
             if (context == null)
@@ -37,10 +39,18 @@ object Utils {
                 dialogInterface.dismiss()
             }
             val alertDialog: AlertDialog = builder.create()
-            alertDialog.setCancelable(false)
+            alertDialog.setCancelable(true)
             alertDialog.show()
         } catch (e: Exception) {
             e.stackTrace
         }
+    }
+
+    fun isEmailValid(email: String): Boolean {
+        return Pattern.matches(EMAIL_VALIDATION_REGEX, email)
+    }
+
+    fun emailValidationError(email: String): String {
+        return "Invalid Email $email"
     }
 }

@@ -1,6 +1,7 @@
 package com.example.surveywithoutcompose.viewModels
 
 import android.app.Application
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
@@ -13,13 +14,13 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class MainviewModel @Inject constructor(private val repository: Repository, application: Application) : BaseViewModel(application) {
+class Welcome_VM @Inject constructor(private val repository: Repository, application: Application) : BaseViewModel(application) {
 
     private val _response: MutableLiveData<NetworkResult<LoginData>> = MutableLiveData()
     val response: LiveData<NetworkResult<LoginData>> = _response
 
-    fun getProductsList(sigIn_Data: UserRequest) = viewModelScope.launch {
-        repository.getProductList(context, sigIn_Data).collect { values ->
+    fun getProductsList(siginData: UserRequest) = viewModelScope.launch {
+        repository.getProductList(context, siginData).collect { values ->
             _response.value = values
         }
     }

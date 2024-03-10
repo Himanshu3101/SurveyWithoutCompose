@@ -7,7 +7,7 @@ import dagger.hilt.android.HiltAndroidApp
 @HiltAndroidApp
 class MyApplication : Application(){
 
- /*   init {
+    init {
         instance = this
     }
 
@@ -17,5 +17,5 @@ class MyApplication : Application(){
         fun applicationContext() : Context {
             return instance!!.applicationContext
         }
-    }*/
+    }
 }
