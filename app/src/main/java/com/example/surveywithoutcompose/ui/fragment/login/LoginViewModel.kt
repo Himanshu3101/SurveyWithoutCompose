@@ -19,6 +19,9 @@ class LoginViewModel @Inject constructor(private val loginRepository: LoginRepos
     private val _loginForm = MutableLiveData<LoginFormState>()
     val loginFormState: LiveData<LoginFormState> = _loginForm
 
+    private val _signForm = MutableLiveData<LoginFormState>()
+    val signFormState: LiveData<LoginFormState> = _signForm
+
     private val _loginResult = MutableLiveData<LoginResult>()
     val loginResult: LiveData<LoginResult> = _loginResult
 
@@ -41,6 +44,7 @@ class LoginViewModel @Inject constructor(private val loginRepository: LoginRepos
             _loginForm.value = LoginFormState(passwordError = R.string.invalid_password)
         } else {
             _loginForm.value = LoginFormState(isDataValid = true)
+            _signForm.value = LoginFormState(isDataValid = true)
         }
     }
 

@@ -21,8 +21,8 @@
         tools:layout="@layout/fragment_login">
 
         <argument
-            android:name="email"
+            android:name="emailArg"
             app:argType="string"
-            app:nullable="true" />
+            android:defaultValue="" />
     </fragment>
 </navigation>

@@ -30,8 +30,6 @@ class WelcomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-
         _binding = FragmentWelcomeBinding.inflate(inflater, container, false)
         _binding.lifecycleOwner = this
         _binding.welcomeBinding = this
@@ -45,8 +43,8 @@ class WelcomeFragment : Fragment() {
         if (isEmailValid(email)) {
             if (user_welcome) {
                 // Move another fragment with email
-                val direction = WelcomeFragmentDirections.actionWelcomeFragmentToLoginFragment2(email)
-                findNavController().navigate(direction)
+                val emailSend = WelcomeFragmentDirections.actionWelcomeFragmentToLoginFragment2(email)
+                findNavController().navigate(emailSend)
             } else {
                 //For Main Page by Guest
             }
@@ -54,7 +52,5 @@ class WelcomeFragment : Fragment() {
             if (email=="") Toast.makeText(this@WelcomeFragment.requireActivity(), "Email Not Valid", Toast.LENGTH_SHORT).show()
             else Toast.makeText(this@WelcomeFragment.requireActivity(), "$email Not Valid", Toast.LENGTH_SHORT).show()
         }
-
-
     }
 }

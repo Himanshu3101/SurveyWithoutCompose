@@ -7,5 +7,9 @@
 
     <style name="Theme.SurveyWithoutCompose" parent="Base.Theme.SurveyWithoutCompose" />
 
+    <style name="LoginTextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="boxStrokeColor">@color/my_light_primary</item>
+        <item name="boxStrokeWidth">2dp</item>
+    </style>
 
 </resources>
